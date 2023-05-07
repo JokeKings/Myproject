@@ -1,0 +1,11 @@
+class Animal:
+    def __init__(self):
+        self.color="红色"
+        pass
+        # 在Python当中，如果不重写__new__默认结构如下
+    def __new__(cls,*args,**kwargs):
+        return super().__new__(cls,*args,**kwargs)
+    pass
+tigger=Animal()#实例化的过程会自动调用__new__去创建实例
+# 在新式类中__new__才是真正实例化方法，为类提供外壳制造出实例框架，
+# 然后调用该框架的方法__init__v进行丰满操作

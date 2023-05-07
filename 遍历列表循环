@@ -1,0 +1,50 @@
+# 遍历列表
+stus=["李白",'杜甫','王安石','白居易']
+# 创建一个while循环，来遍历列表
+i=0
+while i<len(stus):
+    print(stus[i])
+    i+=1
+
+# 通过for循环来遍历列表
+#语法：
+ #for 变量 in 序列“
+        # 代码块 
+        # 每执行一次就会将序列中的一个元素赋值给变量
+for s in stus:
+    print(s)
+
+
+for i in range(1,10):
+    for j in range(1,i+1):
+        print('%d*%d=%d'%(j,i,j*i),end=' ')
+    print()
+print("-"*60)
+print("-"*60)
+
+
+
+
+mima="1234"
+for io in range(0,3):
+    c=input('请输入密码')
+    if c==mima 
+       print('密码正确')
+        break
+    else:
+        print('密码错误，请重新输入')
+    pass
+else:
+    print('密码错误三次，已锁定')
+
+
+print("-"*60)
+print("-"*60)
+
+index=1
+while index<=10:
+    print(index)
+    index+=1
+    pass
+else:
+    print('else执行了吗')

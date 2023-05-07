@@ -1,0 +1,152 @@
+from time import *
+begin=time()
+print("hello")
+s="""锄禾日当午，
+汗滴禾下土。
+谁知盘中餐，
+粒粒皆辛苦。"""
+print()
+end=time()
+print("程序执行时间为",end-begin,"秒")
+
+
+
+#%s在字符串中表示指定占位符，可以表示任何字符
+b="hello %s"%"孙悟空"
+c="hello %s 你好 %s"%("tom","孙悟空")
+print(s)
+print(b)
+print("c=",c)
+print()
+
+
+
+# 同时%3s表示最少长度为3，%3.5S则是表示长度在3到5之间
+dl="hello %3.5s"%"abcdef"#  f是打不出来的
+print("dl=",dl)
+print()
+
+
+
+#保留小数就应该使用%f
+d="hello %.2f"%123.456 
+print(d)
+#格式化字符串，可以通过在字符串前添加一个f来创建一个格式化字符串
+# 在格式化字符串中可以直接嵌入变量
+e=f"hello {b} {c}"
+print(f"e={e}")
+print("e=",e)
+# 字符串的复制（将字符串和数字相乘）
+# 如果将字符串和数字相乘，则解释器会将字符串重复指定的次数并返回
+a="人工智能"
+#a=a*20
+print(a)
+print()
+
+
+
+# 布尔值（bool）用来逻辑判断
+# 布尔值实际上也属于整型
+# None（空值）专门用来表示不存在
+b=None
+print(b)
+print()
+
+
+
+
+# 类型转换
+e=1233
+e=str(e)
+print(type(e))
+# a**=5相当于a=a**5
+# a/=5相当于a=a/5
+f=90
+# f=f//3
+f%=8
+print(f)
+print()
+
+
+
+# 条件运算符
+a1=20
+b1=30
+print("a1是比b1大")if a1>b1 else print("b1是比a1大 ")
+# 练习比较大小，两个条件运算符
+n=10
+m=39
+k=78
+max=n if n>m else m
+max=max if max>k else k
+print("max=",max)
+print()
+
+
+
+
+# input()的使用
+# input("输入一个字符串")
+print()
+
+
+i=0
+while i<5:
+    j=0
+    while j<5-i:
+        print("*",end="")
+        j+=1
+    print()
+    i+=1
+
+
+# 打印九九乘法表
+u=0
+while u<9:
+    u+=1
+    v=0
+    while v<u:
+
+        v+=1
+        print(f"{v}*{u}={u*v} ",end="")
+    print()
+
+
+
+# 模块，通过模块可以对python进行扩展
+# 引入一个time模块，来统计程序执行的时间
+# from time import *
+# time()函数可以用来获取当前的时间，返回的单位是毫秒
+# 获取程序开始的时间
+# began=time()
+# 获取程序执行的结束的时间 
+# 计算程序运行时间
+# end=time()
+# print("程序执行花费了：",end-begin,"秒")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

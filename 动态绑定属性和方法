@@ -1,0 +1,58 @@
+import types#添加方法的库
+
+
+def dymicMethod(self):
+    print(f'{self.name}的体重是{self.weight}，在{Student.school}读大学')
+    pass
+
+
+    # 
+def calssTest(cls):
+    print('这是一个类方法')
+    pass
+
+def staticMethodtest():
+    print("这是一个静态方法")
+    pass
+
+class Student:
+    def __init__(self,name,age):
+        self.name=name
+        self.age=age
+    pass
+    def __str__(self):
+        return f'{self.name}今天{self.age}岁了'
+    pass
+
+
+zyh=Student("joke",20)
+zm=Student('Tom',18)
+zm.weight=50
+zyh.weight=50#动态添加属性
+
+
+print('绑定类方法')
+Student.TestMethod=calssTest
+zyh.TestMethod()
+
+
+print()
+print('静态方法')
+Student.staticMethodtest=staticMethodtest
+Student.staticMethodtest()
+
+print()
+
+
+zyh.printinfo=types.MethodType(dymicMethod,zyh)#动态的绑定方法
+zm.printinfo=types.MethodType(dymicMethod,zm)
+
+# print(zyh)
+# print(zyh.weight)
+print()
+print("------给类对象添加属性--------")
+Student.school='北京邮电大学'#动态添加类属性
+print(zyh.school)
+print('----执行动态调用实例方法------')
+zyh.printinfo()#调用动态绑定的方法
+zm.printinfo()

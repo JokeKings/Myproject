@@ -1,0 +1,19 @@
+# 属性：类属性和实例属性
+# 类属性 就是类对象所拥有的属性
+class Student:
+    name='jack'#属于类属性，就是student类对象所拥有的
+    def __init__(self,age):#实例属性
+        self.age=age#实例属性
+        pass
+    pass
+im=Student(18)
+print(im.name)
+# im.name='Mary'通过实例对象对类属性进行修改是不行的
+Student.name='Tom'
+print(im.age)
+print('------xh的数据--------')
+xh=Student(28)
+print(xh.name)
+print(xh.age)
+
+

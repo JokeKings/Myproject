@@ -1,0 +1,79 @@
+# class Animal:
+#     def eat(self):
+#         print('吃饭了')
+#         pass
+#     def run(self):
+#         print('飞快的跑')
+#         pass
+# class dog(Animal):
+#     def __init__(self,name):
+#         self.name=name
+#     def www(self):
+#         print('汪汪汪')
+# class cat(Animal):
+#     def __init__(self,name):
+#         self.name=name
+#     def miaomiao(self):
+#         print('喵喵')
+# wz=dog("旺仔")
+# wz.eat()
+# wz.www()
+
+
+
+
+
+# # 代码语法
+# calss 父类：
+#     def 父类中的方法（self）:
+#         #do something
+#     # 定义子类，子类继承父类，子类拥有了父类中的所有方法
+# class 子类（父类）：
+#     pass
+# #创建子类对象
+# zi=子类（）
+# #执行从父类中继承的方法
+# zi.父类中的方法
+
+
+# 多继承
+class shenxian:
+    def fly(self):
+        print('神仙会飞')
+    pass
+class monkey:
+    def xihuan(self):
+        print("喜欢吃桃")
+    pass
+class swk(shenxian,monkey):
+    pass
+swk1=swk()
+swk1.fly()
+swk1.xihuan()
+
+
+
+# 问题是  当多个父类当中存在相同方法的时候  应该去调用哪一个呢
+class D(object):
+    def eat(self):
+        print('D.eat')
+        pass
+    pass
+class C(D):
+    def eat(self):
+        print('C.eat')
+        pass
+    pass
+class B(D):
+    pass
+class A(B,C):
+    pass
+a=A()
+a.eat()
+print(A.__mro__) #可以显示类的依次继承关系
+#在执行eat的方法时 查找方法的顺序是
+# 首先到A里面去查找  如果A中没有 则继续的去B类中去查找 如果B中没有
+# 则去C中查找 如果C类中没有 则去D类中去查找，如果还是没有找到 就会报错
+# A-B-C-D  也是继承的顺序
+
+# 重写父类方法

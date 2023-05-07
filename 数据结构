@@ -1,0 +1,88 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+#define MAX_SIZE 255
+typedef struct {
+    int id;
+    const char *name;
+}ElementType;
+//2定义数据表结构
+typedef struct {
+    ElementType datas[MAX_SIZE];//顺序表中的数据元素集合
+    int length;//当前顺序表的元素个数
+}seqlist;
+
+
+/**向顺序表中的index下标处插入某个元素
+* seqlist
+* index要插入的下标
+* element要插入的元素
+*
+*/
+void insertElement(seqlist* seqlist, int index, ElementType element) {
+    //1.验证插入后的元素空间是否超过maxsize
+    //2.index插入的值是否合法[0,max_size-1]
+    //3.插入的index应该在length+1之内
+    //4.从第length-1个下标开始，前面一个元素赋值给后面一个元素
+    if (seqlist->length >= MAX_SIZE) {
+        printf("数组元素已满，插入失败\n");
+        return;
+    }
+    if (index<0 || index>MAX_SIZE - 1) {
+        printf("插入数据位置错误，只能在允许的的下标范围内插入元素[0,%d]\n", MAX_SIZE - 1);
+        return;
+    }
+    if (index > seqlist->length) {
+        printf("插入的下标超过了数组的最大长度-1，插入失败！\n");
+        return;
+    }
+    for (int i = seqlist->length - 1; i >= index; i--) {
+        seqlist->datas[i + 1] = seqlist->datas[i];
+    }
+    //5、将要插入的值赋给index个元素
+    seqlist->datas[index] = element;
+    //6、顺序表的总长度加1
+    seqlist->length +1;
+}
+//初始化链表
+//seqlist 要初始化的顺序表
+//elemarray初始化时要添加的元素内容数组
+//length初始化是添加的元素个数
+void Printlist(seqlist* seqlist) {
+    for (int i = 0; i < seqlist->length; i++) {
+        printf("%d\t%S\n", seqlist->datas[i].id, seqlist->datas[i].name);
+    }
+}
+void InitList(seqlist* seqlist, ElementType* elemArray, int length) {
+    if (length > MAX_SIZE) {
+        printf("超出了数组的最大容量，初始化失败\n");
+        return;
+    }
+    seqlist->length=0;//记得初始化顺序表时，将顺序表长度置零
+    seqlist->length = 0;//记得在初始化顺序表时，将顺序表的长度置零
+    for (int i = 0; i < length - 1; i++) {
+        //每个循环都在下标为i的位置插入一个元素
+        insertElement(seqlist, i, elemArray[i]);
+    }
+}
+
+
+
+ElementType dataArray[] = {
+    {1,"太上老君"},
+    {2,"太上老"},
+    {3,"太上君"},
+    {4,"太上君"},
+
+
+};
+void Testseq();
+int main() {
+    Testseq();
+    return 0;
+}
+void Testseq() {
+    seqlist seqlist;//要操作的顺序表
+    InitList(&seqlist, dataArray, sizeof(dataArray) / sizeof(dataArray[0]));
+    Printlist(&seqlist);
+}

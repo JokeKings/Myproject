@@ -1,0 +1,65 @@
+# 列表的方法
+stus=["孙悟空","猪八戒","沙和尚"]
+print("原列表",stus)
+
+
+
+# append（）
+# 列表最后的位置中添加元素
+stus.append("唐僧")
+print("使用append函数修改后的列表",stus)
+
+
+
+# insert(1:2)
+# 想列表的指定位置插入一个元素
+# 1，代表要插入的位置
+# 2：代表要插入的元素
+stus.insert(2,"唐僧")
+print("使用insert函数插入后",stus)
+stus[2:2]=["唐僧"]#和insert()差不多，这个是切片的用法
+print("使用切片插入后",stus)
+
+
+# extend()
+# 使用新的序列来扩展当前序列
+# 需要一个序列作为参数，将该序列中的元素添加到当前序列中
+stus.extend(["唐僧","白骨精"])
+print("使用expend函数插入后",stus)#和append函数差不多，这个函数可以添加多个
+# 也可以用+
+
+
+# clear
+# 清空序列
+# stus.clear()
+
+# pop()
+# 根据索引删除并返回指定元素
+stus.pop(2)#删除索引为2的元素
+print("使用pop函数修改后",stus)
+print("被删除的元素",stus.pop(2))
+
+# 删除指定值的元素,删除多个相同的元素时，只会删除第一个
+stus.remove("唐僧")
+print("使用remove函数删除指定元素后",stus)
+
+# 反转reverse()
+stus.reverse()
+print(stus)
+
+
+# sort排序用的
+my_list=list("sdadtwawuhdgdgrv")
+y_list=list("sdadtwawuhdgdgrv")
+print("修改前",my_list)
+# 升序排列
+my_list.sort()
+print("升序修改后",my_list)
+# 降序排列
+y_list.sort(reverse=True)
+print("降序修改后",y_list)
+
+
+
+
+

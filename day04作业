@@ -1,0 +1,59 @@
+# 1 写函数，接收n个数字，求这些参数数字的和
+# def Su(*args):
+#      #
+#     '''
+#     处理接受的数据
+#     :param args: 可变长的参数 可以接受一个元组
+#     :return: 计算和
+#     '''
+#     sum=0
+#     for i in args:
+#         sum+=i
+#     return sum
+# a=Su(1,2,3,4)
+# print(f'a={a}')#格式化输出
+# a=Su(4,5,6,7,8,9,10)
+# print('a1=%d'%a)
+
+ # 2  写函数，找出传入的列表或元组的奇数位对应的元素，并返回一个新的列表
+# def func(con):
+#     li=[]
+#     index=1
+#     for i in con:
+#         if index%2==1:
+#             li.append(i)
+#         index+=1
+#     return li
+# asu=func([1,3,4,6,7,8])
+# print(asu)
+
+
+# qwq=tuple(range(10,30))
+# print(f'qw{qwq}')
+# zz=func(qwq)
+# print(zz)
+
+
+# 写函数，检查传入字典的每一个value的长度,如果大于2，那么仅保留前两个长度的内容，并将新内容返回给调用者。
+# PS:字典中的value只能是字符串或列表
+def funck(jk):#可以直接加变量，不用**jk
+    '''
+    处理字典类型的数据
+    :param **jk:字典
+    :return:
+    '''
+    result={}#空字典
+    for key,value in jk.items():
+        if len(value)>2:
+            result[key]=value[0:2]#向字典添加数据
+        else:
+            result[key]=value
+            pass
+        pass
+    return result
+    pass
+# 函数调用
+dictObj={'name':'夏雨','hobby':['唱歌','跳舞','运动','编程'],'pro':'中国艺术'}
+print(funck(dictObj))
+
+

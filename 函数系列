@@ -1,0 +1,269 @@
+#函数简介
+# 函数也是对象
+# 对象是内存中专门用来储存数据的
+# 创建函数
+# def 函数名([形参1，形参2......]) :
+#     代码块
+# def priny():
+#     '''
+#     打印语句
+#     '''
+#     print("自律每一天")
+# priny()
+# def okay(name,height,weight,hobby,pro):
+#     # 代码块
+#     print('姓名是%s'%name)
+#     print('%s的身高是%f'%(name,height))
+#     print('%s的体重是%f'%(name,weight))
+#     print('%s的爱好是%s'%(name,hobby))
+#     print('%s的专业是%s'%(name,pro))
+# okay('李白',180,100,'写诗','诗人')
+
+# my=('q','we','e','r')
+# print(type(my))
+# print()
+
+
+# 可变参数（当参数的个数不确定时使用），比较灵活
+# def getcomputer(*args):
+#     '''
+#     计算累加和
+#     ：param args:可变长的参数类型
+#     ：return:
+#     '''
+#     result=0
+#     for i in args:
+#         result+=i
+#     print('result=%d'%result)
+# getcomputer(1,2,3,4,5,6,7,8)
+
+
+# 缺省参数
+# def gh(a=20,b=30):#缺省参数就是指当没有实参时就会输出形参里面的数
+#     sum=a+b
+#     print(sum)
+# gh()
+# s=int(input("请输入第一个数"))
+# d=int(input("请输入第二个数"))
+# gh(s,d)
+# print()
+# print()
+
+
+# 关键字可变参数
+# **来定义
+# 在函数体内，参数关键字时一个字典类型，key是一个字符串
+# def keyfunc(**args):#一个*可以调用元组类型的，两个就是字典类型的
+#     print(args)
+#     pass
+# # 调用
+# # keyfunc(1,2,3) #TypeError: keyfunc() takes 0 positional arguments but 3 were given
+# dictA={'name':'loser','age':18}#这个是字典
+# keyfunc(**dictA)
+# keyfunc(name='loser',age=28)
+# keyfunc()
+
+
+# # 可选参数
+# # 可选参数必须放到关键字可选参数之前def dha(**kwargs,*args)这样是不符合语法要求的
+# def more(*args,**kwargs):#一个*可以调用元组类型的，两个就是字典类型的
+#     print(args)
+#     print(kwargs)
+#     pass
+# more(1,2,34,4,name='刘德华')
+
+
+# 函数返回值
+# 概念：函数值执行完以后就会返回一个对象，乳沟函数的内部有return就可以返回实际的值，否则返回None
+# 用途：给调用方返回数据
+# 在一个函数体内可以出现多个return值，但是肯定只能返回一个return
+# 如果在一个函数体内，执行了return，意味着函数执行完成退出了，return后面的代码就不会执行
+# def Sum(a,b):
+#     sum=a+b  
+#     return sum
+#     pass
+# print(Sum(21,32))
+
+# def suml(num):
+#     # li=[]改变数据类型
+#     i=1
+#     sum=0
+#     while i<=num:
+#         sum+=i
+#         i+=1
+#         pass
+#     # li.append(sum)
+#     return sum
+#     # return li
+# app=suml(10)
+# print(app)
+# print(type(app))
+
+# def returntuple():
+#     '''
+#     返回元组类型的数据
+#     :return:
+#     '''
+#     return {"name":"aaa"}
+#     pass
+# a=returntuple()
+# print(type(a))
+
+
+
+# 函数的嵌套
+def sum1(a,b):
+    sum=a+b
+    return sum
+def sum2(a,b):
+    sum=a*sum1(a,b)
+    return sum
+    pass
+e=sum2(3,5)
+print(e)
+
+
+# 匿名函数
+# 语法：
+# lambda 参数1、参数2、参数3:表达式
+# 特点
+# 1.使用lambda关键字去创建函数
+# 2.没有名字的函数
+# 3.匿名函数冒号后面的表达式有且只有一个, 注意：是表达式，而不是语句
+# 4.匿名函数自带return，而这个return的结果就是表达式计算后的结果
+# 缺点
+# lambde只能是单个表达式，不是一个代码块，lambde的设计就是为了满足简单函数的场景，
+# 仅仅能封装有限的逻辑,复杂逻辑实现不了，必须使用def来处理
+def computer(x,y):
+    '''
+    计算数据和
+    :param x:
+    :param y:
+    :return:
+    '''
+    return x+y
+    pass
+# 对应的匿名函数
+M=lambda x,y:x+y
+# 通过变量去调用匿名函数
+# print(M(23,19))
+# print(computer(10,45))
+
+result=lambda a,b,c:a*b*c
+# print(result(12,34,2))
+age=25
+
+# print('可以参军' if age>18 else '继续上学') #可以替换传统双分支的写法
+
+# funcTest=lambda x,y:x if x>y else y
+# print(funcTest(2,12))
+
+# rs=(lambda x,y:x if x>y else y)(16,12) #直接的调用
+# print(rs)
+varRs=lambda x:(x**2)+890
+print(varRs(10))
+#
+
+# 递归函数
+# 递归满足的条件
+# 自己调用自己
+# 必须有一个明确的结束条件
+# 优点：逻辑简单、定义简单
+# 缺点：容易导致栈溢出，内存资源紧张，甚至内存泄漏
+# 求阶乘
+# 循环的方式去实现
+def jiecheng(n):
+    result=1
+    for item in range(1,n+1):
+        result*=item
+        pass
+    return result
+
+# print('10的阶乘{}'.format(jiecheng(10)))
+# 递归方式去实现
+def diguiJc(n):
+    '''
+    递归实现
+    :param n: 阶乘参数
+    :return:
+    '''
+    if n==1:
+        return 1
+    else:
+       return n*diguiJc(n-1)
+    pass
+
+# 递归调用
+print('5的阶乘{}'.format(diguiJc(5)))
+# 递归案例 模拟实现 树形结构的遍历
+import os #引入文件操作模块
+def findFile(file_Path):
+    listRs=os.listdir(file_Path) #得到该路径下所有文件夹
+    for fileItem in listRs:
+        full_path=os.path.join(file_Path,fileItem) #获取完整的文件路径
+        if os.path.isdir(full_path):#判断是否是文件夹
+            findFile(full_path) #如果是一个文件夹 再次去递归
+        else:
+            print(fileItem)
+            pass
+        pass
+    else:
+        return
+    pass
+
+# 调用搜索文件夹对象
+findFile('D:\文本储存\人智201')
+
+
+
+# 内置函数
+# 取绝对值
+# print(abs(-34))
+# round  取近似值
+# print(round(3.66,1))
+# pow 求次方
+# print(3**3)
+# print(pow(3,3))
+# max 求最大值
+# print(max([23,123,4,5,2,1,786,234]))
+# print(max(23,235))
+# sum 使用
+# print(sum(range(50),3))
+# eval 执行表达式
+a,b,c=1,2,3
+print('动态执行的函数={}'.format(eval('a*b+c-30')))
+def TestFun():
+    print('我执行了吗?')
+    pass
+# eval('TestFun()') #可以调用函数执行
+
+
+
+# 类型转换函数
+# print(bin(10)) #转换二进制
+# print(oct(9))#转换八进制
+# print(hex(23)) #十六进制
+
+
+# 元组转换为列表
+tup=(1,2,3,4)
+# print(type(tup))
+li=list(tup) #强制转换
+# print(type(li))
+li.append('强制转换成功')
+# print(li)
+tupList=tuple(li)
+# print(type(tupList))
+
+
+
+# 字典操作 dict()
+# dic=dict(name='小明',age=18) #创建一个字典
+# # print(type(dic))
+# # # dict['name']='小明'
+# # # dict['age']=18
+# # print(dic)
+# bytes转换
+# print(bytes('我喜欢python',encoding='utf-8'))#说明转换成什么语言encoding='utf-8'
+
+

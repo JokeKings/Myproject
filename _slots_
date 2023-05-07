@@ -1,0 +1,14 @@
+class Student(object):
+    __slots__=('name','age')
+    def __str__(self):
+        return f'{self.name}今年{self.age}岁'
+
+    pass
+xw=Student()
+xw.name="joke"
+# xw.age=81
+#__slots限制了属性的添加，不在范围内的属性增加就会报错
+# xw.score=100#'Student' object has no attribute 'score'
+print(xw.__dict__)#所有可以用的属性都在这里存储，不足的地方就是占用的内存空间大
+# 可以看到 在定义slots变量之后student类的实例已经不能随意
+print(xw)

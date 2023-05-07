@@ -1,0 +1,61 @@
+# 定义类
+# 类结构 类名 属性 方法
+# class 类名:
+#     属性
+#     方法
+# class Person:
+#     name='小明'
+#     age=20
+#     def eat(self):
+#         print("大口吃饭")
+#         pass
+
+# # 创建对象【类的实例化】
+# # 对象名=类名（）
+# xm=Person()
+# xm.eat()#调用函数
+
+
+
+# 类和对象
+# 类:类是具有一组 相同或者相似特征【属性】和行为【方法】的一系列[多个]对象组合
+# 现实世界    计算机世界
+# 行为---------> 方法
+# 特征---------->属性
+# 对象: 对象是实实在在的一个东西，类的实例化，具象化
+# 类是对象的抽象化  而对象是类的一个实例
+# 实例方法：在类的内部，使用def 关键字来定义 
+# 第一个参数默认是 self【名字标识可以是其他的名字，但是这个位置必须被占用】
+# 实例方法是归于 类的实例所有
+# 属性：类属性  实例属性
+# 在类的内部定义的变量【类属性】
+# 在方法内部定义的【通过类似于self.变量名】 变量，是实例属性
+# class Shuiguo:
+#     def __init__(self,name,sex,age):
+#         self.name=name
+#         self.sex=sex
+#         self.age=age
+#         pass
+#     def eat(self,food):
+#         print(f"{self.name}早上吃{food}了")
+# zp=Shuiguo("李白","男",'18')
+# zp.eat('香蕉')
+# print(zp.name,zp.age,zp.sex)
+
+class Xs:
+    def __init__(self,name,food,pro):#实例方法
+        self.name=name
+        self.food=food
+        self.pro=pro
+    def __str__(self):
+        '''
+        打印对象，自定义对象，是内容格式的
+        '''
+        return '%s喜欢吃%s选修的专业是：%s'%(self.name,self.food,self.pro)
+    pass
+    def __new__(cls,*args,**kwargs):
+        print("----执行new函数--------")
+        return object.__new__(cls)#没有这一行代码，下面对象就无法被实例化
+xm=Xs('小明','苹果','计算机')
+print(xm)
+

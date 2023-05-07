@@ -1,0 +1,15 @@
+# 单例模式 是一种常用的软件设计模式，目的，确保一个类中只有一个实例存在
+# 如果希望在整个系统中，某个类只能出现一个实例的时候，那么做个单例对象就满足要求
+# 创建一个单例对象，基于__new__去实现的【推荐的一种】
+class dabase(object):
+    def __new__(cls,*args,**kwargs):
+        # cls.instance=cla.__new__(cls)不能使用自身的new方法
+        #容易造成深度递归，应该调用父类的new方法
+        if not hasattr(cls,'_instance'):
+            cls._instance=super().__new__(cls,*args,**kwargs)
+        return cls._instance
+    pass
+da1=dabase()
+print(id(da1))
+da2=dabase()
+print(id(da2))

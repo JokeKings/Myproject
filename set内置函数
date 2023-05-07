@@ -1,0 +1,36 @@
+set1={1,2,3}
+set2={6,2,8}
+# print(type(set1))
+
+
+# # 添加数据
+# set1.add(4)
+# # print(set1)
+
+# # 清空操作
+# # set1.clear()
+# # print(set1)
+
+# # 差集操作
+# print(set1.difference(set2))
+
+
+# # 交集操作
+# print(set1.intersection(set2))#等价于print(set1&set2)
+
+# # 并集操作
+# print(set1.union(set2))#等价于print(set1|set2)
+
+# # pop是从集合中拿取数据并删除
+# a=set1.pop()
+# print(a)
+# print(set1)
+
+
+# 指定移除
+set1.discard(2)
+print(set1)
+
+# update更新
+set1.update(set2)
+print(set1)

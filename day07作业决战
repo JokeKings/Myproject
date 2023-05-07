@@ -1,0 +1,32 @@
+import time
+class Ad:
+    def __init__(self,name,flood):
+        self.name=name
+        self.flood=flood
+        pass
+    def tong(self,enemy):
+        enemy.flood-=10
+        print(f'{self.name}捅了{enemy.name}一刀')
+        pass
+    def kanren(self,enemy):
+        enemy.flood-=15
+        print(f'{self.name}捅了{enemy.name}一刀')
+        pass
+    def chiyao(sellf):
+        enemy.flood+=10
+        print(f'{self.name}恢复血量10,现在血量{self.flood}')
+    def __str__(self):
+        return '%s还剩%s的血量'%(self.name,self.flood)
+# 创建实例化对象
+xmcx=Ad("西门吹雪",100)
+ygc=Ad("叶孤城",100)
+while True:
+    if xmcx.flood<=0 or ygc.flood<=0:
+        print("游戏结束")
+        break
+    else:
+        xmcx.tong(ygc)
+        print(xmcx)
+        print(ygc)
+        print('-------------------------------------')
+        time.sleep(1)

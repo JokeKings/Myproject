@@ -1,0 +1,123 @@
+#函数简介
+# 函数也是对象
+# 对象是内存中专门用来储存数据的
+# 创建函数
+# def 函数名([形参1，形参2......]) :
+#     代码块
+# def priny():
+#     '''
+#     打印语句
+#     '''
+#     print("自律每一天")
+# priny()
+# def okay(name,height,weight,hobby,pro):
+#     # 代码块
+#     print('姓名是%s'%name)
+#     print('%s的身高是%f'%(name,height))
+#     print('%s的体重是%f'%(name,weight))
+#     print('%s的爱好是%s'%(name,hobby))
+#     print('%s的专业是%s'%(name,pro))
+# okay('李白',180,100,'写诗','诗人')
+
+# my=('q','we','e','r')
+# print(type(my))
+# print()
+
+
+# 可变参数（当参数的个数不确定时使用），比较灵活
+# def getcomputer(*args):
+#     '''
+#     计算累加和
+#     ：param args:可变长的参数类型
+#     ：return:
+#     '''
+#     result=0
+#     for i in args:
+#         result+=i
+#     print('result=%d'%result)
+# getcomputer(1,2,3,4,5,6,7,8)
+
+
+# 缺省参数
+# def gh(a=20,b=30):#缺省参数就是指当没有实参时就会输出形参里面的数
+#     sum=a+b
+#     print(sum)
+# gh()
+# s=int(input("请输入第一个数"))
+# d=int(input("请输入第二个数"))
+# gh(s,d)
+# print()
+# print()
+
+
+# 关键字可变参数
+# **来定义
+# 在函数体内，参数关键字时一个字典类型，key是一个字符串
+# def keyfunc(**args):#一个*可以调用元组类型的，两个就是字典类型的
+#     print(args)
+#     pass
+# # 调用
+# # keyfunc(1,2,3) #TypeError: keyfunc() takes 0 positional arguments but 3 were given
+# dictA={'name':'loser','age':18}#这个是字典
+# keyfunc(**dictA)
+# keyfunc(name='loser',age=28)
+# keyfunc()
+
+
+# # 可选参数
+# # 可选参数必须放到关键字可选参数之前def dha(**kwargs,*args)这样是不符合语法要求的
+# def more(*args,**kwargs):#一个*可以调用元组类型的，两个就是字典类型的
+#     print(args)
+#     print(kwargs)
+#     pass
+# more(1,2,34,4,name='刘德华')
+
+
+# 函数返回值
+# 概念：函数值执行完以后就会返回一个对象，乳沟函数的内部有return就可以返回实际的值，否则返回None
+# 用途：给调用方返回数据
+# 在一个函数体内可以出现多个return值，但是肯定只能返回一个return
+# 如果在一个函数体内，执行了return，意味着函数执行完成退出了，return后面的代码就不会执行
+# def Sum(a,b):
+#     sum=a+b  
+#     return sum
+#     pass
+# print(Sum(21,32))
+
+# def suml(num):
+#     # li=[]改变数据类型
+#     i=1
+#     sum=0
+#     while i<=num:
+#         sum+=i
+#         i+=1
+#         pass
+#     # li.append(sum)
+#     return sum
+#     # return li
+# app=suml(10)
+# print(app)
+# print(type(app))
+
+# def returntuple():
+#     '''
+#     返回元组类型的数据
+#     :return:
+#     '''
+#     return {"name":"aaa"}
+#     pass
+# a=returntuple()
+# print(type(a))
+
+
+
+# 函数的嵌套
+def sum1(a,b):
+    sum=a+b
+    return sum
+def sum2(a,b):
+    sum=a*sum1(a,b)
+    return sum
+    pass
+e=sum2(3,5)
+print(e)

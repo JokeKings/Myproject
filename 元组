@@ -1,0 +1,48 @@
+# 元组tuple
+# 元组是一个不可变的序列
+# 、它的操作的方式基本上和列表是一致的
+# 所以你在操作元组时，就把元组当成一个不可变的列表就好了
+# 一般我们不希望数据改变时，就使用元组，其余情况使用列表
+
+# 创建元组
+# 使用（）来创建元组
+my_tuple=()#创建一个空元组
+print(my_tuple,type(my_tuple))
+my_s=(1,2,3,4,5)#创建了一个5个元素的元组
+# 元组是不可变对象，不能重新赋值
+# my_s[2]=10    TypeError: 'tuple' object does not support item assignment
+print(my_s)
+# 当元组不是空元组时，括号可以省略（但是里边至少有一个）
+my_tuple1=10,20,30,40
+print(my_tuple1,type(my_tuple1))
+
+# 元组的解包
+# a,b,c,d=my_tuple1
+# print("a=",a)
+# print("b=",b)
+# print("c=",c)
+# print("d=",d)
+a=100
+b=300
+print(a,b)
+# 交互a和b的值，我们就可以利用元组的解包
+a,b=b,a
+print(a,b)
+
+# 在对一个元祖进行解包时，变量的数量必须和元组中的数量一致
+# 也可以在变量的前边添加一个*，这样变量将会获取元组中所有剩余的元素
+my_tuple1=10,20,30,40
+a,b,*c=my_tuple1
+a,*b,c=my_tuple1
+*a,b,c=my_tuple1
+print("a=",a)
+print("b=",b)
+print("c=",c)
+
+# 元组可以修改里面列表的值
+tuplea=(23,324,132,["李白","唐僧","牛马"])
+tuplea[3][0]=5
+print(tuplea)
+
+tupleb=tuple(range(19))
+print(tupleb.count(8))#统计里面有几个8

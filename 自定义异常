@@ -1,0 +1,23 @@
+class toolong(Exception):
+    def __init__(self,leng):
+        self.len=leng
+        pass
+    def __str__(self):
+        return '你输入的姓名数据长度是'+str(self.len)+'超过长度了'
+    pass
+def name_Test():
+    name=input("请输入姓名..")
+    try:
+        if len(name)>5:
+            raise toolong(len(name))
+        else:
+            print(name)
+            pass
+        pass
+    except toolong as result:#使用Exception也行
+        print(result)
+        pass
+    finally:
+        print('执行完毕了')
+name_Test()
+        

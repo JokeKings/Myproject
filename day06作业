@@ -1,0 +1,55 @@
+# # 求三组连续自然数的和：求出1到10、20到30和35到45的三个和
+# def sum1(a,b):
+#     return sum(range(a,b+1))
+#     pass
+# a=int(input('请输入起始数'))
+# q=int(input('请输入结束数'))
+# print(sum1(a,q))
+
+# # 100个和尚吃100个馒头，大和尚一人吃3个馒头，小和尚三人吃1个馒头。请问大小和尚各多少人？
+# a=1
+# while a<100:
+#     if (3*a+(100-a)/3)==100:
+#         break
+#     else:
+#         a+=1
+# print(f'大和尚有{a}人')
+# print(f'小和尚有{100-a}人')
+
+
+# 指定一个列表，列表里含有唯一一个只出现过一次的数字。写程序找出这个“独一无二”的数字
+def ko(cos):
+    i=0
+    while i<len(cos):
+        s=0
+        count=0
+        while s<len(cos):
+            if cos[i]==cos[s]:
+                count+=1
+            s+=1
+            pass
+        if count==1:
+            print(cos[i])
+        i+=1
+        pass
+a=[2,3,4,5,2,42,23,42,]
+ko(a)
+
+
+# *****需要理解
+# # 指定一个列表，列表里含有唯一一个只出现过一次的数字。写程序找出这个“独一无二”的数字
+# li=[1,3,4,3,3,5,7,2,4,2,5,2,1]
+# set1=set(li)
+# # print(set1)
+# for i in set1:
+#     li.remove(i)
+#     pass
+# set2=set(li) #set2中为原来li中有重复的数字集合
+# for i in set1: #set1中数据全部去重后形成的集合
+#     if i not in set2:
+#         print(i)
+#         pass
+#     pass
+# pass
+
+

@@ -1,0 +1,19 @@
+# 使用私有属性的场景
+# 1.把特定的一个属性隐藏起来，不想让类的外部进行直接调用
+# 2.保护这个属性不想让属性的值随意的改变
+# 3.保护这个属性，不想那个让属性的值随意的改变
+class Person(object):
+    """docstring for ClassName"""
+    def __init__(self):
+        self.age = 30
+        self.__name="张三"#属性私有化之后，外部就不能直接访问了，内部是可以的
+        pass
+    def __str__(self):
+        return f'{self.__name}的年龄是{self.age}'
+class Student(Person):
+    pass
+stu=Student()
+# print(stu.__name)子类不能继承父类公共的属性和行为
+x1=Person()
+print(x1)
+# 私有化方法一样，在方法的前面加双下划线

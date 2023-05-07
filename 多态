@@ -1,0 +1,31 @@
+# 多态：就是同一种行为，对于不同的子类【对象】有不同的行为表现
+# 要想实现多态，必须满足两个前提条件
+# 1：继承：多态必须发生在父类和子类之间
+# 2：重写：子类重写父类方法
+class Animal:
+    def say_who(self):
+        print('我是动物')
+        pass
+    pass
+class Duck(Animal):
+    # 重写父类方法
+    def say_who(self):
+        print('我是一只鸭子')
+    pass
+class Dog(Animal):
+    # 重写父类方法
+    def say_who(self):
+        print('我是一只哈士奇')
+    pass
+class Cat(Animal):
+    # 重写父类方法
+    def say_who(self):
+        print('我是一只猫')
+    pass
+# duck1=Duck()
+# duck1.say_who()
+def comm(obj):
+    obj.say_who()
+listobj=[Duck(),Dog(),Cat()]
+for item in listobj:
+    comm(item)

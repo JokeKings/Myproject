@@ -1,0 +1,24 @@
+# 猜年龄小游戏
+a=0
+c=int(input('输入一个年龄'))
+while a<=3:
+    d=int(input('输入想的数'))
+    if d==c:
+        print('恭喜你猜对了')
+        break
+    else:
+        print("猜错了")
+        a+=1
+        if a==3:
+            print('你已经猜错三次了，是否还要继续，继续按Y，退出N')
+            d=input()
+            if d=="Y":
+                a=0
+            elif d=='N':
+                a==4
+                print('游戏结束')
+            else:
+                print('请正确输入')
+    
+        
+    

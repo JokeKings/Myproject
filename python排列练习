@@ -1,0 +1,148 @@
+from time import *
+# 1  数字排列
+print("第一题")
+num=0
+for a in range(1,5):
+   for b in range(1,5):
+       for c in range(1,5):
+           if(a!=b)and(a!=c)and(b!=c):
+             print(a,b,c)
+             num+=1
+print(num)
+print()
+
+
+
+# 2 比较最大值
+print("第二题")
+n=10
+m=39
+k=78
+max=n if n>m else m
+max=max if max>k else k
+print("max=",max)
+t=n if n>m and a>k else m if m>k else k
+print("t=",t)
+print()
+
+
+# 3求100以内奇数和
+print("第三题")
+a=0
+i=1
+while i<100 :
+    a=a+i
+    i+=2
+print(a)
+print()
+
+
+# 4       100以内7的倍数之和
+print("第四题")
+b=0
+j=0
+while j<100 :
+    j+=1
+    if j%7==0 :
+        b=b+j
+print(b)
+print()
+
+
+
+# 5   水仙花数
+print("第五题")
+q=100
+while q<1000 :
+    w=q//100
+    e=(q//10)%10
+    r=q%10
+    if q==w**3+e**3+r**3 :
+        print(q)
+    q+=1
+print()
+
+
+
+# 6   质数
+print("第六题")
+# be=time()
+# t=2
+# while t<=100:
+#     flag=True
+#     y=2
+#     while y<t:
+#         if t%y==0:
+#             flag=False
+#             break
+#         y+=1
+#         if flag:
+#             print(t)
+#             pass
+#     t+=1
+# en=time()
+# print("该程序运行时间为",en-be,"秒")
+# t=2
+# y=1
+# print(2)
+# print(3)
+# print(5)
+# print(7)
+# while y<99 :
+#     y+=1
+#     if y%3!=0 and y%2!=0 and y%5!=0 and y%7!=0 :
+#         print(y)
+
+
+
+
+
+# 7  输入一个数，判断是否为质数
+print("第七题")
+begin=time()
+# 获取num是否是质数，只能被1和它本身整除的数就是质数
+# 获取到所有的可能整除num的整数
+num=int(input("请输入一个大于1的整数"))
+i1=2
+# 创建一个变量，用来记录num是否是质数，默认认为num是质数
+flag=True
+while i1<num:
+# 判断num能否被i整除
+# 如果num能被i整除，则说明num一定不是质数
+    if num%i1==0  :
+        # 一旦进入判断，则证明num不是质数，则需要将flag修改为false
+        flag=False
+        break#第一次优化
+    i1+=1
+if flag:
+    print(num,"是质数")
+else :
+    print(num,"不是质数")
+    print()
+end=time()
+print("程序执行时间为",end-begin,"秒")
+print()
+
+
+
+
+
+
+#第八题    打印九九乘法表
+# z=0
+# x=0
+# while z<9:+
+#     z+=1
+#     while x<9:
+for z in range(1,10):
+    for x in range(z):
+        x=x+1
+        print("%d*%d=%-3d"%(x,z,x*z),end="")
+    print("")
+
+
+
+
+
+
+    

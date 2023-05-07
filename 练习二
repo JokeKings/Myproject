@@ -1,0 +1,82 @@
+# 员工管理系统
+print("-"*20,"欢迎进入员工管理系统","-"*20)
+# 创建一个列表，用来保存员工的信息，员工的信息以字符串的形式统一保存到列表
+# emps=["\t1\t孙悟空\t18\t男\t花果山"]这样的话序号就写死了，一旦删除某人，序号不会改变
+emps=["孙悟空\t18\t男\t花果山"]
+while True:
+    print()
+    print()
+    print("-"*60)
+# 显示用户的选项
+    print("请选择要做的操作：")
+    print("\t1.查询员工")
+    print("\t2.添加员工")
+    print("\t3.删除员工")
+    print("\t4.退出系统")
+    use_choose=input("请选择[1-4]:")
+    # 根据用户的选择做相关的操作
+    if use_choose=="1":
+        # 查询员工
+        # 打印表头
+        print("\t序号\t姓名\t年龄\t性别\t住址")
+        # 创建一个变量，来表示员工的序号
+        n=1
+        for emp in emps:
+            print(f"\t{n}\t{emp}")
+            n+=1
+    elif use_choose=="2":
+        # 添加员工
+        # 获取要添加员工的信息
+        emp_name=input("请输入员工的姓名：")
+        emp_age=int(input("请输入员工的年龄："))
+        emp_gender=input("请输入员工的性别：")
+        emp_address=input("请输入员工的住址：")
+        # 创建员工信息
+        # 将四个信息拼接为一个字符串，然后插入到列表中
+        emp=f"{emp_name}\t{emp_age}\t{emp_gender}\t{emp_address}"
+        print("-"*60)
+        print("姓名\t年龄\t性别\t住址")
+        print(emp)
+        print("-"*60)
+        user_comfirm=input("是否确认该操作[Y/N]")
+        if user_comfirm=="Y":
+            emps.append(emp)
+            # 显示提示信息
+            print("添加成功")
+        else :
+            # 取消操作
+            print("添加已取消！")
+    elif use_choose=="3":
+        # 删除员工
+        # 获取需要删除员工的序号
+        del_index=int(input("请输入要删除员工的序号："))
+        if 0<del_index <=len(emps):
+            del_i=del_index-1
+            print("以下员工将被删除")
+            print("-"*60)
+            print("\t序号\t姓名\t年龄\t性别\t住址")
+            print(f"\t{del_index}\t{emps[del_i]}")
+            print("-"*60)
+            user_comfirm=input("是否确认该操作[Y/N]:")
+            if user_comfirm=="Y":
+                emps.pop(del_i)
+                # 显示提示
+                print("员工已删除！")
+            else :
+                # 操作取消
+                print("操作取消")
+    elif use_choose=="4":
+        # 退出
+        print("欢迎使用！再见")
+        input("请输入回车退出")
+        break
+    else :
+        print("你输入有误，请重新输入！")
+    print()
+    print()
+    print("-"*60)
+
+
+
+
+

@@ -1,0 +1,24 @@
+# 打印直角三角形
+r=1
+while r<=5:
+    j=1
+    while j<=r:
+        print('*',end='')
+        j+=1
+    print()
+    r+=1
+print()
+# 打印等腰三角形
+a=1
+while a<=7:#控制行数
+    b=1
+    while b<=7-a:
+        print(" ",end='')
+        b+=1
+        pass
+    k=1
+    while k<=2*a-1:
+        print('*',end='')
+        k+=1
+    print()
+    a+=1

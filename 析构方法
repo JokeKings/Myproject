@@ -1,0 +1,13 @@
+class Animal:
+    def __init__(self,name):
+        self.name=name
+        print("这是构造初始化的方法")
+        pass
+    def __del__(self):
+        # 主要的应用就是来操作 对象的释放，一旦释放完毕，对象便不能在使用了
+        print('这是析构方法')
+        print(f'{self.name}被彻底清理了，内存空间也释放了')
+    pass
+cat=Animal('小花猫')
+del cat#手动清理
+input("程序等待ing")
